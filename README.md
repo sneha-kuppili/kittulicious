@@ -1,7 +1,7 @@
 # LoveProject!!!
-A simple static webpage as a gift for my girlfriend . Although a personal project , but made it open-source to help all the lovers out there who are seeking for a creative idea to impress their partners.
+HAIII RAYMONNN!! So I've been working on a little something for our 3 months! Very cheesey, very camp, very us I would hope. Never really used Javascript before but I had a lot of fun learning the basics. Hope you enjoy!
 <br>
-You can check this out with 
+Open me <3
 
 <br>
-Link: https://ritvikbhatia.github.io/LoveProject
+Link: [https://sneha-kuppili.github.io/kittulicious/](url)
