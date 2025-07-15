@@ -158,12 +158,12 @@
 	            max: 10
 	        },
 	        density: 10,
-	        growSpeed: 1000 / 60,
+	        growSpeed: 1000 / 15,
 	        color: {
 				rmin: 128,
-				rmax: 255,
+				rmax: 190,
 				gmin: 0,
-				gmax: 128,
+				gmax: 205,
 				bmin: 0,
 				bmax: 128,
 	            opacity: 0.1

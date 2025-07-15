@@ -86,34 +86,54 @@ function startHeartAnimation() {
 				if (progress >= str.length) {
 					clearInterval(timer);
 				}
-			}, 75);
+			}, 40);
 		});
 		return this;
 	};
 })(jQuery);
 
-function timeElapse(date){
-	var current = Date();
-	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
+function timeElapse(date) {
+	var current = new Date();
+	
+	// Calculate full months
+	var months =
+	  (current.getFullYear() - date.getFullYear()) * 12 +
+	  (current.getMonth() - date.getMonth());
+	if (
+	  current.getDate() < date.getDate() ||
+	  (current.getDate() === date.getDate() && current.getHours() < date.getHours())
+	) {
+	  months--;
+	}
+  
+	// Calculate remaining time after subtracting full months
+	var tempDate = new Date(date);
+	tempDate.setMonth(tempDate.getMonth() + months);
+	var seconds = (Date.parse(current) - Date.parse(tempDate)) / 1000;
+  
 	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
+  
 	var hours = Math.floor(seconds / 3600);
-	if (hours < 10) {
-		hours = "0" + hours;
-	}
+	if (hours < 10) hours = "0" + hours;
+  
 	seconds = seconds % 3600;
 	var minutes = Math.floor(seconds / 60);
-	if (minutes < 10) {
-		minutes = "0" + minutes;
-	}
-	seconds = seconds % 60;
-	if (seconds < 10) {
-		seconds = "0" + seconds;
-	}
-	var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
+	if (minutes < 10) minutes = "0" + minutes;
+  
+	seconds = Math.floor(seconds % 60);
+	if (seconds < 10) seconds = "0" + seconds;
+  
+	var result = 
+	  "<span class=\"digit\">" + months + "</span> months " +
+	  "<span class=\"digit\">" + days + "</span> days " +
+	  "<span class=\"digit\">" + hours + "</span> hours " +
+	  "<span class=\"digit\">" + minutes + "</span> minutes " +
+	  "<span class=\"digit\">" + seconds + "</span> seconds";
+  
 	$("#elapseClock").html(result);
-}
-
+  }
+  
 function showMessages() {
 	adjustWordsPosition();
 	$('#messages').fadeIn(5000, function() {
