@@ -4,4 +4,4 @@ HAIII RAYMONNN!! So I've been working on a little something for our 3 months! Ve
 Open me <3
 
 <br>
-Link: [https://sneha-kuppili.github.io/kittulicious/](url)
+Link: https://sneha-kuppili.github.io/kittulicious/
